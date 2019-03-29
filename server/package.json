@@ -1,0 +1,30 @@
+{
+  "name": "message-board",
+  "version": "1.0.0",
+  "description": "Repo to quickly startup a node server with express",
+  "main": "server.js",
+  "scripts": {
+    "db-start": "docker build -t mongocontainer . && docker run -p 27017:27017 -p 28017:28017 mongocontainer",
+    "test": "PORT=4241 mocha",
+    "test:watch": "PORT=4242 nodemon --exec \"mocha\"",
+    "start": "nodemon server.js"
+  },
+  "author": "Elena Ionescu",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.0.16",
+    "cors": "^2.8.4",
+    "express": "^4.13.3",
+    "lodash": "^4.17.10",
+    "mongoose": "^5.2.17",
+    "mongoose-paginate": "^5.0.3",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "chai-json-schema": "^1.5.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4"
+  }
+}
